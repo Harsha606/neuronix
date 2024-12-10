@@ -1,0 +1,6 @@
+streamlit
+streamlit_option_menu
+groq
+json
+os
+requests
