@@ -298,7 +298,7 @@ if st.session_state.screen == "welcome":
                             st.warning("Please enter a prompt to generate code...!")
 
             elif selected_tab == "Enhance Code":
-                colec1,colec2,colec3=st.columns([4.8,0.4,4.8])
+                colec1,colec2,colec3=st.columns([4.9,0.2,4.9])
                 with colec1:
                     code_input = st.text_area("Paste your code here to enhance:",height=150)
                     enhance_code_prompt=f"""If this is my code {code_input} analyze it to suggest an optimized version. The analysis includes:
