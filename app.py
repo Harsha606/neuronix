@@ -328,6 +328,7 @@ if st.session_state.screen == "welcome":
                                         Providing an optimized version of the code, aiming for reduced complexity, better readability, and performance.
                                         Highlighting key differences between your original code and the optimized version as comments.
                                         """
+                            st.markdown(get_llama3_response(enhance_code_prompt))
                     else:
                         st.warning("Please paste your code to get suggestions...!")
     if selection=='Code Inspector ➔':
