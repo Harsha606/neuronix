@@ -96,7 +96,7 @@ def display_user_profile(name, logo_url):
     )
 def merge_to_git(repo_name,source_branch,target_branch,file_name,file_content,commit_message='Added New File',pr_title='Added New Feature'):
     # Replace these with your actual values
-    GITHUB_ACCESS_TOKEN = os.getenv('GITHUB_ACCESS_TOKEN')
+    GITHUB_ACCESS_TOKEN = os.getenv('GT_ACCESS_TOKEN')
     REPO_NAME = f"GANESH70755/{repo_name}"  # Example: "user/repo"
     SOURCE_BRANCH = source_branch
     TARGET_BRANCH = target_branch
