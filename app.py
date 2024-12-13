@@ -254,7 +254,7 @@ if st.session_state.screen == "welcome":
     },
     )
     if selection=='Task Blueprint ➔':
-        st.snow()
+        #st.snow()
         with col3:
             # Create a div with a unique id to style this specific button
             if st.button("Logout", key="logout",use_container_width=True):
