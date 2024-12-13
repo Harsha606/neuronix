@@ -8,11 +8,11 @@ import re
 from ticket import create_work_package,get_work_package_by_id
 from get_project_details import get_all_work_package_ids,get_all_work_package_title,get_all_work_package_description,get_work_package,update_work_package_status
 from github import Github
-#from dotenv import load_dotenv
+from dotenv import load_dotenv
 import base64
-#load_dotenv()
+load_dotenv()
 # Initialize Groq API client
-client = Groq(api_key=st.secrets('GROQ_API_KEY'))  # Replace with your actual API key
+client = Groq(api_key=os.getenv('GROQ_API_KEY'))  # Replace with your actual API key
 st.set_page_config(layout="wide")
 # Path to store user data
 USER_DATA_FILE = "users.json"
@@ -96,7 +96,7 @@ def display_user_profile(name, logo_url):
     )
 def merge_to_git(repo_name,source_branch,target_branch,file_name,file_content,commit_message='Added New File',pr_title='Added New Feature'):
     # Replace these with your actual values
-    GITHUB_ACCESS_TOKEN = st.secrets('GT_ACCESS_TOKEN')
+    GITHUB_ACCESS_TOKEN = os.getenv('GT_ACCESS_TOKEN')
     REPO_NAME = f"GANESH70755/{repo_name}"  # Example: "user/repo"
     SOURCE_BRANCH = source_branch
     TARGET_BRANCH = target_branch
