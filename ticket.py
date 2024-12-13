@@ -3,7 +3,7 @@ from requests.auth import HTTPBasicAuth
 # Constants
 PROJECT_ID = "sample"  # Replace with your actual project ID
 BASE_URL = f"https://anblicks.openproject.com/api/v3/projects/{PROJECT_ID}/work_packages"
-API_KEY = "cce9ce739e074955f0ac90def1d1affd8236086eb8896600943186d49dd75386"
+API_KEY = ${{ secrets.OPEN_PROJECT_API_KEY }}
 def create_work_package(subject, description, type_id, status_id, priority_id, assignee_id,estimated_hours):
     headers = {
         "Content-Type": "application/json"
