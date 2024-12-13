@@ -4,4 +4,3 @@ groq
 requests
 pygithub
 plotly
-os
