@@ -5,7 +5,7 @@ import streamlit as st
 # Constants
 PROJECT_ID = "sample"  # Replace with your actual project ID
 BASE_URL = f"https://anblicks.openproject.com/api/v3/projects/{PROJECT_ID}/work_packages"
-API_KEY = st.secrets('OPEN_PROJECT_API_KEY')
+API_KEY = os.getenv('OPEN_PROJECT_API_KEY')
 def create_work_package(subject, description, type_id, status_id, priority_id, assignee_id,estimated_hours):
     headers = {
         "Content-Type": "application/json"
