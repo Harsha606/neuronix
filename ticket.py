@@ -1,9 +1,10 @@
 import requests
+from get_project_details import *
 from requests.auth import HTTPBasicAuth
 # Constants
 PROJECT_ID = "sample"  # Replace with your actual project ID
 BASE_URL = f"https://anblicks.openproject.com/api/v3/projects/{PROJECT_ID}/work_packages"
-API_KEY = ${{ secrets.OPEN_PROJECT_API_KEY }}
+API_KEY = os.getenv('OPEN_PROJECT_API_KEY')
 def create_work_package(subject, description, type_id, status_id, priority_id, assignee_id,estimated_hours):
     headers = {
         "Content-Type": "application/json"
@@ -54,15 +55,15 @@ def get_work_package_by_id(work_package_id):
         # Filter for the specific work package
         for wp in work_packages:
             if wp["id"] == work_package_id:
-                print("\nWork Package Found:")
-                print(f"ID: {wp['id']}")
-                print(f"Subject: {wp['subject']}")
-                print(f"Description: {wp.get('description', {}).get('raw', 'No description')}")
-                print(f"Status: {wp['_links']['status']['title']}")
-                print(f"Priority: {wp['_links']['priority']['title']}")
-                print(f"Assignee: {wp['_links'].get('assignee', {}).get('title', 'Unassigned')}")
-                print(f"Type: {wp['_links']['type']['title']}")
-                print(f"Project: {wp['_links']['project']['title']}")
+                #print("\nWork Package Found:")
+                # print(f"ID: {wp['id']}")
+                # print(f"Subject: {wp['subject']}")
+                # print(f"Description: {wp.get('description', {}).get('raw', 'No description')}")
+                # print(f"Status: {wp['_links']['status']['title']}")
+                # print(f"Priority: {wp['_links']['priority']['title']}")
+                # print(f"Assignee: {wp['_links'].get('assignee', {}).get('title', 'Unassigned')}")
+                # print(f"Type: {wp['_links']['type']['title']}")
+                # print(f"Project: {wp['_links']['project']['title']}")
                 return wp
         print("Work package not found.")
     else:
