@@ -5,7 +5,7 @@ from requests.auth import HTTPBasicAuth
 PROJECT_ID = "sample"  # Replace with your actual project ID
 BASE_URL = f"https://anblicks.openproject.com/api/v3/projects/{PROJECT_ID}/work_packages"
 BASE_URL_1="https://anblicks.openproject.com/api/v3"
-API_KEY = ${{ secrets.OPEN_PROJECT_API_KEY }}
+API_KEY = os.getenv('OPEN_PROJECT_API_KEY')
 # Headers for API calls
 HEADERS = {
     "Content-Type": "application/json"
