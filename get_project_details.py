@@ -1,9 +1,9 @@
  
 import requests
 import os
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 from requests.auth import HTTPBasicAuth
-load_dotenv()
+#load_dotenv()
 # Constants
 PROJECT_ID = "sample"  # Replace with your actual project ID
 BASE_URL = f"https://anblicks.openproject.com/api/v3/projects/{PROJECT_ID}/work_packages"
