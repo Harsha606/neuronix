@@ -429,7 +429,7 @@ if st.session_state.screen == "welcome":
             for _ in range(2):
                 st.write('')
             with st.container(border=True,height=140):
-                file_to_review= st.file_uploader('**Upload File to Review**:',type=['py','java','scala'],key='file_to_review')
+                file_to_review= st.file_uploader('**Upload File to Review**:',type=['py','java','scala'])
         # with colci22:
         #     review_btn=st.button('Review Code',use_container_width=True)
         if file_to_review is not None:
