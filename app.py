@@ -4,14 +4,15 @@ import plotly.express as px
 from groq import Groq
 import json
 import os
-import base64
 import re
 from ticket import create_work_package,get_work_package_by_id
 from get_project_details import get_all_work_package_ids,get_all_work_package_title,get_all_work_package_description,get_work_package,update_work_package_status
 from github import Github
+from dotenv import load_dotenv
 import base64
+load_dotenv()
 # Initialize Groq API client
-client = Groq(api_key="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")  # Replace with your actual API key
+client = Groq(api_key=${{ secrets.GROQ_API_KEY }})  # Replace with your actual API key
 st.set_page_config(layout="wide")
 # Path to store user data
 USER_DATA_FILE = "users.json"
@@ -95,7 +96,7 @@ def display_user_profile(name, logo_url):
     )
 def merge_to_git(repo_name,source_branch,target_branch,file_name,file_content,commit_message='Added New File',pr_title='Added New Feature'):
     # Replace these with your actual values
-    GITHUB_ACCESS_TOKEN = "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"
+    GITHUB_ACCESS_TOKEN = ${{ secrets.GT_ACCESS_TOKEN }}
     REPO_NAME = f"GANESH70755/{repo_name}"  # Example: "user/repo"
     SOURCE_BRANCH = source_branch
     TARGET_BRANCH = target_branch
@@ -156,7 +157,7 @@ if st.session_state.screen == "login":
     with col02:
         col6,col7,col8=st.columns([2,4,2])
         with col7:
-            st.image("Neuronix_Logo_BG_1.png",use_container_width=True)
+            st.image("Neuronix_Logo_BG_1.png",use_column_width=True)
         username = st.text_input("Username")
         password = st.text_input("Password", type="password")
         col11,col12,col13=st.columns([2,3,4])
@@ -186,7 +187,7 @@ elif st.session_state.screen == "register":
     with col02:
         col6,col7,col8=st.columns([2,4,2])
         with col7:
-            st.image("Neuronix_Logo_BG_1.png",use_container_width=True)
+            st.image("Neuronix_Logo_BG_1.png",use_column_width=True)
         new_username = st.text_input("New Username")
         new_password = st.text_input("New Password", type="password")
         email = st.text_input("Email")
@@ -253,7 +254,7 @@ if st.session_state.screen == "welcome":
     },
     )
     if selection=='Task Blueprint ➔':
-        #st.snow()
+        st.snow()
         with col3:
             # Create a div with a unique id to style this specific button
             if st.button("Logout", key="logout",use_container_width=True):
@@ -428,7 +429,7 @@ if st.session_state.screen == "welcome":
             for _ in range(2):
                 st.write('')
             with st.container(border=True,height=140):
-                file_to_review= st.file_uploader('**Upload File to Review**:',type=['py','java'])
+                file_to_review= st.file_uploader('**Upload File to Review**:',type=['py','java','scala'],key='file_to_review')
         # with colci22:
         #     review_btn=st.button('Review Code',use_container_width=True)
         if file_to_review is not None:
@@ -493,7 +494,7 @@ if st.session_state.screen == "welcome":
                         hole=0.4
                     )
                     st.plotly_chart(fig)
-            with st.expander('Detailed Review Explantion'):
+            with st.expander('Detailed Review Explanation'):
                     st.markdown(review_response)
     if selection=='GitFlow Hub':
         # Place the Logout button inside col3 with a unique container
@@ -523,17 +524,17 @@ if st.session_state.screen == "welcome":
             target_branch=st.selectbox('**Select Target Branch:**',['main'])
         colgh4,colgh5,colgh51=st.columns([2.5,5,2.5])
         with colgh31:
-            file_name=st.text_input('**Enter File Name:**')
+            file_name=st.text_input('**Enter File Name:**',value='new_file.txt',placeholder='Enter file name with extension (file.py)...')
         with colgh5:
-            file_to_raise_pr= st.file_uploader('**Upload File to Review**:',type=['py','java'])
+            file_to_raise_pr= st.file_uploader('**Upload File to Review**:',type=['py','java','scala'],key='file_to_raise_pr')
         if file_to_raise_pr is not None:
             global file_content
-            file_content=file_to_raise_pr.read().decode("utf-8")  # Assuming text file
+            file_content=file_to_raise_pr.read().decode("utf-8")
         colgh6,colgh7,colgh8=st.columns([4,2,4])
         with colgh7:
             st.write('')
-            if st.button('Pull Code',use_container_width=True):
+            if st.button('Deploy Code',use_container_width=True):
                 merge_to_git(repo_name,source_branch,target_branch,file_name,file_content,commit_message='Added New File',pr_title='Added New Feature')
-                st.success('Created PR Successfully')
+                st.success('Code Deployed Successfully')
                 update_work_package_status(selected_wp_id_gh,12)
                 st.balloons()
