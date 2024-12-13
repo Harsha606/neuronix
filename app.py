@@ -96,7 +96,7 @@ def display_user_profile(name, logo_url):
     )
 def merge_to_git(repo_name,source_branch,target_branch,file_name,file_content,commit_message='Added New File',pr_title='Added New Feature'):
     # Replace these with your actual values
-    GITHUB_ACCESS_TOKEN = os.getenv('GT_ACCESS_TOKEN')
+    GITHUB_ACCESS_TOKEN = os.getenv('GITHUB_ACCESS_TOKEN')
     REPO_NAME = f"GANESH70755/{repo_name}"  # Example: "user/repo"
     SOURCE_BRANCH = source_branch
     TARGET_BRANCH = target_branch
@@ -157,7 +157,7 @@ if st.session_state.screen == "login":
     with col02:
         col6,col7,col8=st.columns([2,4,2])
         with col7:
-            st.image("Neuronix_Logo_BG_1.png",use_container_width=True)
+            st.image("Neuronix_Logo_BG_1.png",use_column_width=True)
         username = st.text_input("Username")
         password = st.text_input("Password", type="password")
         col11,col12,col13=st.columns([2,3,4])
@@ -187,7 +187,7 @@ elif st.session_state.screen == "register":
     with col02:
         col6,col7,col8=st.columns([2,4,2])
         with col7:
-            st.image("Neuronix_Logo_BG_1.png",use_container_width=True)
+            st.image("Neuronix_Logo_BG_1.png",use_column_width=True)
         new_username = st.text_input("New Username")
         new_password = st.text_input("New Password", type="password")
         email = st.text_input("Email")
@@ -254,7 +254,7 @@ if st.session_state.screen == "welcome":
     },
     )
     if selection=='Task Blueprint ➔':
-        #st.snow()
+        st.snow()
         with col3:
             # Create a div with a unique id to style this specific button
             if st.button("Logout", key="logout",use_container_width=True):
