@@ -4,3 +4,4 @@ groq
 requests
 pygithub
 plotly
+dotenv
