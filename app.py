@@ -157,7 +157,7 @@ if st.session_state.screen == "login":
     with col02:
         col6,col7,col8=st.columns([2,4,2])
         with col7:
-            st.image("Neuronix_Logo_BG_1.png",use_column_width=True)
+            st.image("Neuronix_Logo_BG_1.png",use_container_width=True)
         username = st.text_input("Username")
         password = st.text_input("Password", type="password")
         col11,col12,col13=st.columns([2,3,4])
@@ -187,7 +187,7 @@ elif st.session_state.screen == "register":
     with col02:
         col6,col7,col8=st.columns([2,4,2])
         with col7:
-            st.image("Neuronix_Logo_BG_1.png",use_column_width=True)
+            st.image("Neuronix_Logo_BG_1.png",use_container_width=True)
         new_username = st.text_input("New Username")
         new_password = st.text_input("New Password", type="password")
         email = st.text_input("Email")
