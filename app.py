@@ -8,9 +8,9 @@ import re
 from ticket import create_work_package,get_work_package_by_id
 from get_project_details import get_all_work_package_ids,get_all_work_package_title,get_all_work_package_description,get_work_package,update_work_package_status
 from github import Github
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import base64
-load_dotenv()
+#load_dotenv()
 # Initialize Groq API client
 client = Groq(api_key=os.getenv('GROQ_API_KEY'))  # Replace with your actual API key
 st.set_page_config(layout="wide")
