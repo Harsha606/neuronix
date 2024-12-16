@@ -85,7 +85,7 @@ Detailed documentation is available in the `docs/` folder. It includes:
 
 ## 🗒️ License
 
-Neuronix is licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute this project in accordance with the license terms.
+You are free to use, modify, and distribute this project in accordance with the license terms.
 
 ---
 
