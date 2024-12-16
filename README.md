@@ -1,7 +1,7 @@
 # Neuronix
 ```html
 <p align="center">
-<img src="https://github.com/user-attachments/assets/e5ae8d82-cefd-4ec9-a1c2-4de2602048a1" alt="Description of Image" width="500"/>![Neuronix_Logo]
+<img src="https://github.com/Harsha606/neuronix/blob/main/Neuronix_Logo.png" alt="Description of Image" width="500"/>![Neuronix_Logo]
 </p>
 ```
 
