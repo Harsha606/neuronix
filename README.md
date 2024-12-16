@@ -1,8 +1,9 @@
 # Neuronix
-
+```html
+<p align="center">
 ![Neuronix_Logo](https://github.com/user-attachments/assets/e5ae8d82-cefd-4ec9-a1c2-4de2602048a1)
-
-
+</p>
+```
 
 Welcome to **Neuronix**, your comprehensive solution to automate the process of task creation,code suggestion, code review and Deploy code in VCS . This repository contains tools and frameworks designed to [mention key functionalities or problem-solving capabilities].
 
