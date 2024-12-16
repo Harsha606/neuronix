@@ -1,6 +1,9 @@
 # Neuronix
 
-Welcome to **Neuronix**, your comprehensive solution for [describe the main goal or purpose of the repository briefly, e.g., workflow monitoring, job scheduling, or data processing]. This repository contains tools and frameworks designed to [mention key functionalities or problem-solving capabilities].
+![Neuronix_Logo_BG_1](https://github.com/user-attachments/assets/5a113f1b-3794-4130-afd5-7e242694f6ed)
+
+
+Welcome to **Neuronix**, your comprehensive solution to automate the process of task creation,code suggestion, code review and Deploy code in VCS . This repository contains tools and frameworks designed to [mention key functionalities or problem-solving capabilities].
 
 ---
 
