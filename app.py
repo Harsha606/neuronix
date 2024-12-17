@@ -521,7 +521,7 @@ if st.session_state.screen == "welcome":
         with colgh2:
             source_branch=st.selectbox('**Select Source Branch:**',['Feature1','Feature2','Feature3'])
         with colgh3:
-            target_branch=st.selectbox('**Select Target Branch:**',['DEV','PROD','UAT'])
+            target_branch=st.selectbox('**Select Target Branch:**',['main','DEV','PROD','UAT'])
         colgh4,colgh5,colgh51=st.columns([2.5,5,2.5])
         with colgh31:
             file_name=st.text_input('**Enter File Name:**',value='new_file.txt',placeholder='Enter file name with extension (file.py)...')
