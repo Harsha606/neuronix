@@ -517,11 +517,11 @@ if st.session_state.screen == "welcome":
                     st.write('**Ticket Title:**',get_all_work_package_title(selected_wp_id_gh))
         colgh1,colgh2,colgh3,colgh31=st.columns(4)
         with colgh1:
-            repo_name=st.selectbox('**Select Repository:**',['neuronix'])
+            repo_name=st.selectbox('**Select Repository:**',['H2INEURONIX'])
         with colgh2:
-            source_branch=st.selectbox('**Select Source Branch:**',['feature1','feature2'])
+            source_branch=st.selectbox('**Select Source Branch:**',['Feature1','Feature2'])
         with colgh3:
-            target_branch=st.selectbox('**Select Target Branch:**',['main','develop','prod'])
+            target_branch=st.selectbox('**Select Target Branch:**',['DEV','PROD','UAT'])
         colgh4,colgh5,colgh51=st.columns([2.5,5,2.5])
         with colgh31:
             file_name=st.text_input('**Enter File Name:**',value='new_file.txt',placeholder='Enter file name with extension (file.py)...')
@@ -534,7 +534,7 @@ if st.session_state.screen == "welcome":
         with colgh7:
             st.write('')
             if st.button('Deploy Code',use_container_width=True):
-                merge_to_git(repo_name,source_branch,target_branch,file_name,file_content,commit_message='Added New File',pr_title='Added New Feature')
-                st.success('Code Deployed Successfully')
                 update_work_package_status(selected_wp_id_gh,12)
+                st.success('Code Deployed Successfully')
                 st.balloons()
+                merge_to_git(repo_name,source_branch,target_branch,file_name,file_content,commit_message='Added New File',pr_title='Added New Feature')
