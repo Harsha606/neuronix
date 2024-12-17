@@ -517,7 +517,7 @@ if st.session_state.screen == "welcome":
                     st.write('**Ticket Title:**',get_all_work_package_title(selected_wp_id_gh))
         colgh1,colgh2,colgh3,colgh31=st.columns(4)
         with colgh1:
-            repo_name=st.selectbox('**Select Repository:**',['H2INEURONIX'])
+            repo_name=st.selectbox('**Select Repository:**',['sample','H2INEURONIX'])
         with colgh2:
             source_branch=st.selectbox('**Select Source Branch:**',['Feature1','Feature2','Feature3'])
         with colgh3:
