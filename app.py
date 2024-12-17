@@ -517,11 +517,11 @@ if st.session_state.screen == "welcome":
                     st.write('**Ticket Title:**',get_all_work_package_title(selected_wp_id_gh))
         colgh1,colgh2,colgh3,colgh31=st.columns(4)
         with colgh1:
-            repo_name=st.selectbox('**Select Repository:**',['sample','hello','H2INEURONIX'])
+            repo_name=st.selectbox('**Select Repository:**',['neuronix'])
         with colgh2:
-            source_branch=st.selectbox('**Select Source Branch:**',['Feature1','Feature2','Feature3'])
+            source_branch=st.selectbox('**Select Source Branch:**',['feature1','feature2'])
         with colgh3:
-            target_branch=st.selectbox('**Select Target Branch:**',['main','DEV','PROD','UAT'])
+            target_branch=st.selectbox('**Select Target Branch:**',['main','develop','prod'])
         colgh4,colgh5,colgh51=st.columns([2.5,5,2.5])
         with colgh31:
             file_name=st.text_input('**Enter File Name:**',value='new_file.txt',placeholder='Enter file name with extension (file.py)...')
